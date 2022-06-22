@@ -1,1 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* 
+====================================
+Global Styling
+=====================================
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(120deg, #D3CCE3, #E9E4F0);
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.header {
+    font-size: 2.4rem;
+    color: #7529df;
+}
+
+.header,
+.todo {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo__input,
+.todo__btn {
+    padding: 0.8rem;
+    font-size: 2.4rem;
+    border: none;
+    background: white;
+}
+
+.todo__input:focus {
+    outline: none;
+}
+
+.todo__btn {
+    color: #7529df;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.todo__btn:hover {
+    background: #7529df;
+    color: white;
+}
