@@ -2,11 +2,12 @@
 const todoInput = document.querySelector(".todo__input");
 const todoBtn = document.querySelector(".todo__btn");
 const todoList = document.querySelector(".todo__list");
-
+const filterOptions = document.querySelector(".filter")
 //Event Listeners
 
 todoBtn.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteCheck);
+filterOptions.addEventListener("click", filterTodo);
 
 
 //functions
@@ -54,4 +55,30 @@ function deleteCheck(event){
         const todo = item.parentElement;
         todo.classList.toggle("completed")
     }
+}
+
+function filterTodo(e){
+    const todos = todoList.childNodes;
+    todos.forEach(function(todo){
+        console.log(todo);
+        switch(e.target.value){
+            case "all":
+                todo.style.display = "flex";
+                break;
+            case "completed":
+                if(todo.classList.contains("completed")){
+                    todo.style.display = "flex";
+                } else {
+                    todo.style.display = "none";
+                }
+                break;
+            case "uncompleted":
+                if(todo.classList.contains("completed")){
+                    todo.style.display = "none";
+                } else {
+                    todo.style.display = "flex";
+                }
+                break;
+        }
+    });
 }
